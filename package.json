@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "db.migrate": "prisma migrate",
+    "db.studio": "prisma studio",
+    "predev": "prisma migrate dev",
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn --poll -r tsconfig-paths/register src/server.ts"
   },
   "devDependencies": {
@@ -18,5 +20,8 @@
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
     "typescript": "*"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.4.0"
   }
 }
