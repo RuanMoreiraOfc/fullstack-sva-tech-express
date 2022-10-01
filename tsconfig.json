@@ -33,6 +33,7 @@
 
       "@reminders/*": ["src/modules/reminders/*"],
 
+      "@controllers/*": ["src/controllers/*"],
       "@routes": ["src/routes/index.ts"],
       "@routes/*": ["src/routes/*"],
     },
@@ -101,6 +102,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true
   },
-  "include": ["**/*.ts","**/*.tsx"],
+  "include": ["**/*.ts","**/*.tsx", "src/routes"],
   "exclude": ["node_modules"]
 }
