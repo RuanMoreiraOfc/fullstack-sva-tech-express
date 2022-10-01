@@ -6,6 +6,7 @@ import type {
   IReminderRepository,
   IFilterRemindersDTO,
   ICreateReminderDTO,
+  IUniqueReminderDTO,
 } from '@reminders/repositories/IReminderRepository';
 
 export { ReminderRepository };
@@ -42,6 +43,21 @@ class ReminderRepository implements IReminderRepository {
     });
 
     const reminder = new Reminder(reminderOnDb);
+
+    return reminder;
+  }
+
+  async findUniqueInDay({ description, date }: IUniqueReminderDTO) {
+    const reminderFromDb = await this.prisma.reminder.findUnique({
+      where: {
+        unique_in_day: { description, date },
+      },
+    });
+
+    const reminder =
+      reminderFromDb === null //
+        ? null
+        : new Reminder(reminderFromDb);
 
     return reminder;
   }
