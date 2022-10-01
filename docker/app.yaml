@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    environment:
+      PORT: 3333
+    ports:
+      - 3333:3333
+      - 9229:9229
+    volumes:
+      - ..:/home/app
+      - /home/app/node_modules
