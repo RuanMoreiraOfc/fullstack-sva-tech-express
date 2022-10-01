@@ -1,3 +1,9 @@
-const PORT = process.env.PORT ?? 3333;
+import getEnv from '@utils/getEnv';
 
-console.log(PORT);
+import { app } from './app';
+
+const PORT = getEnv('PORT', 'number', 3333);
+
+app.listen(PORT, () =>
+  console.log(`Server opened at http://localhost:${PORT}`),
+);
