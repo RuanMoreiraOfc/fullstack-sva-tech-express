@@ -31,6 +31,8 @@
 
       "@errors/*": ["src/errors/*"],
 
+      "@reminders/*": ["src/modules/reminders/*"],
+
       "@routes": ["src/routes/index.ts"],
       "@routes/*": ["src/routes/*"],
     },
