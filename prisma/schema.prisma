@@ -9,3 +9,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Reminder {
+  id          String   @id @default(uuid())
+  description String   @db.VarChar(30)
+  city        String?
+  date        DateTime
+  created_at  DateTime @default(now())
+
+  @@unique([description, date], name: "unique_in_day")
+  @@map("reminders")
+}
