@@ -13,6 +13,7 @@ datasource db {
 model Reminder {
   id          String   @id @default(uuid())
   description String   @db.VarChar(30)
+  color       String   @default("#2ac") @db.VarChar(8)
   city        String?
   date        DateTime
   created_at  DateTime @default(now())

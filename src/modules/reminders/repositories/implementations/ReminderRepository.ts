@@ -33,12 +33,13 @@ class ReminderRepository implements IReminderRepository {
     return reminders;
   }
 
-  async create({ description, city, date }: ICreateReminderDTO) {
+  async create({ description, color, city, date }: ICreateReminderDTO) {
     const reminderOnDb = await this.prisma.reminder.create({
       data: {
         description,
         city,
         date,
+        color,
       },
     });
 

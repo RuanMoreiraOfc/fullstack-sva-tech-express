@@ -29,6 +29,7 @@ class CreateReminderUseCase implements ICreateReminderUseCase {
     return {
       id: reminder.id,
       description: reminder.description,
+      color: reminder.color,
       city: reminder.city,
       date: reminder.date,
       created_at: reminder.created_at,

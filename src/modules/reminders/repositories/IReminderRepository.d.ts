@@ -9,6 +9,7 @@ export type {
 
 interface ICreateReminderDTO {
   description: string;
+  color?: string;
   city?: string;
   date: Date;
 }

@@ -20,6 +20,10 @@ class Reminder implements IReminder {
     return this.data.city;
   }
 
+  get color() {
+    return this.data.color;
+  }
+
   get date() {
     return this.data.date;
   }
