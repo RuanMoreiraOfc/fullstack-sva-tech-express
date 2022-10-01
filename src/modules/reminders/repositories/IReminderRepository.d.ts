@@ -1,6 +1,12 @@
 import type { IReminder } from '@reminders/models/Reminder';
 
-export type { IReminderRepository, IFilterRemindersDTO };
+export type { IReminderRepository, ICreateReminderDTO, IFilterRemindersDTO };
+
+interface ICreateReminderDTO {
+  description: string;
+  city?: string;
+  date: Date;
+}
 
 type IFilterRemindersDTO =
   | {
@@ -16,4 +22,5 @@ type IFilterRemindersDTO =
 
 interface IReminderRepository {
   list: (data: IFilterRemindersDTO) => Promise<IReminder[]>;
+  create: (data: ICreateReminderDTO) => Promise<IReminder>;
 }
