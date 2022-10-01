@@ -1,6 +1,14 @@
 version: '3.9'
 
 services:
-  extends:
-    file: ./docker/app.yaml
-    service: app
+  db:
+    extends:
+      file: ./docker/db.yaml
+      service: db
+
+  app:
+    depends_on:
+      - db
+    extends:
+      file: ./docker/app.yaml
+      service: app
