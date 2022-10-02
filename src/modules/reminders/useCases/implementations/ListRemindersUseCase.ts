@@ -24,6 +24,18 @@ class ListRemindersUseCase implements IListRemindersUseCase {
       endsAt,
     } as unknown as IFilterRemindersDTO);
 
-    return reminders;
+    return reminders.map(
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      ({ id, city, color, created_at, date, description }) => {
+        return {
+          id,
+          description,
+          color,
+          city,
+          date,
+          created_at,
+        };
+      },
+    );
   }
 }
